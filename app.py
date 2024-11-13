@@ -1,10 +1,12 @@
 from flask import Flask, request, send_file, jsonify
+from flask_cors import CORS  # Import CORS
 from visualizer import Plotter  
 import io
 import json
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 df = None  # Global dataframe to store uploaded CSV/Excel data
 
